@@ -44,8 +44,14 @@
         },
         
         createWeekView: function (days, eventsWithResources) {
-            var eventsForWeek = {};
-        
+            var eventsForWeek = {
+                '1': {},
+                '2': {},
+                '3': {},
+                '4': {},
+                '5': {}
+            };
+            
             _.each(days, function (daysEvent, dayNumber) {
                 var day = dayNumber;
                 _.each(daysEvent, function (events, timeline) {
@@ -53,8 +59,8 @@
                     _.each(events, function (event) {
                         _.each(eventsWithResources, function (eventWithResource) {
                             if (events == eventWithResource.id) {
-                                eventsForWeek[dayNumber] = {};
-                                eventsForWeek[dayNumber][timeline] = events;
+                                eventsForWeek[day];
+                                eventsForWeek[day][time] = events;
                             }
                         }, this);     
                     }, this);  
