@@ -1,7 +1,6 @@
 'use strict';
 
 var collections = {},
-    calendar = {},
     templates = {},
     App = {};
 
@@ -18,9 +17,11 @@ $(function () {
     collections.resources = new App.ResourcesCollection(resourcesCollection);
     collections.weeks = new App.WeekCollection(scheduleCollection);
     
+    App.mediator = new Mediator();
+    
     var router = new App.Router();
     
-    Backbone.history.start({pushState: true});
+    Backbone.history.start({pushState: false});
 });
 
 function setUp (parent, modules) {
