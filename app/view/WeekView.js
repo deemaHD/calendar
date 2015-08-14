@@ -59,7 +59,6 @@
                     _.each(events, function (event) {
                         _.each(eventsWithResources, function (eventWithResource) {
                             if (events == eventWithResource.id) {
-                                eventsForWeek[day];
                                 eventsForWeek[day][time] = events;
                             }
                         }, this);     
