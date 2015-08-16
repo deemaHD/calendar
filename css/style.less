@@ -1,0 +1,66 @@
+@background: #99cccc;
+@border: #49A1C6;
+@days_bg: #C6E7F4;
+@month_name_bg: #70ADC9;
+
+.text-center {
+    text-align: center;
+}
+
+body {
+//	background-color: #FFFFFF;
+	background-image: url('img/bg.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: right bottom;
+	margin: 20px;
+	font-size: 12px;
+//	color: #296FA5;
+}
+
+.hiden {
+    display: none;
+}
+
+div#main {
+    table {
+        margin: 0 auto;
+        margin-bottom: 3%;
+        tr {
+            height: 2em;
+            td {
+                .text-center;
+                border: 1px solid @border;
+                background-color: @background;
+                a {
+                    text-decoration: none;
+                    font-size: 1.3em;
+                    padding: 10 5 10 10;
+                }
+            }
+        }
+    }
+}
+
+.daysList td{
+    background-color: @days_bg;
+}
+
+.monthName td{
+    .text-center;
+    background-color: @month_name_bg;
+    font-size: 1.5em;
+    color: white;
+}
+
+.daysName td{
+    background-color: @month_name_bg;    
+}
+
+.daysDate td {
+    background-color: @days_bg;
+}
+
+.monthHeader{
+    .text-center;
+}
