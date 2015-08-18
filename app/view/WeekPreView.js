@@ -1,4 +1,7 @@
 var WeekPreView = Backbone.View.extend({
+    tagName: 'table',
+    className: 'preview',
+    
     template: templates.weekPreviewTpl,
     
     events: {

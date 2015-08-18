@@ -1,5 +1,5 @@
 templates.weekPreviewTpl = _.template([
-'    <table>',
+//'    <table>',
 '        <tr>',
 '        <th class="groups">',
 '            Groups',
@@ -36,5 +36,5 @@ templates.weekPreviewTpl = _.template([
 '           <% } %>',
 '        <% }); %>',
 '        </tr>',
-'    </table>'
+//'    </table>'
 ].join(''));

@@ -1,5 +1,7 @@
 (function (This) {
     This.WeekView = Backbone.View.extend({
+        tagName: 'table',
+        
         template: templates.weekTpl,
         
         render: function (resourceId, currentWeekId) {
