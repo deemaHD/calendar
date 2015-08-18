@@ -26,7 +26,7 @@
         },
         
         showWeek: function (id) {
-            This.mediator.publish('ShowWeek', id);
+            This.mediator.publish('ShowWeekById', id);
         }
     });
 })(App);

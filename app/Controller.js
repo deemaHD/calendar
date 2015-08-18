@@ -20,6 +20,7 @@
         function setUpMediator () {
             App.mediator.subscribe('ShowCalendar', showCalendar, {}, this);
             App.mediator.subscribe('ShowWeek', showWeek, {}, this);
+            App.mediator.subscribe('ShowWeekById', showWeekById, {}, this);
         }
         
         function showCalendar () {
@@ -33,13 +34,27 @@
             
             $('#main').append(weekPreView.render(previewWeek.id).el);
         }
-            
+        
+        function showWeekById (id) {
+            getModelById(id, showWeek);
+        }
+        
         function findFirstWeek () {
             monthView.findFirstWeek();
         }
         
         function hideAll () {
             $('#main').children().addClass('hiden');
+        }
+        
+        function getModelById (id, callback) {
+            var weeks = collections.weeks.toJSON();
+            _.each(weeks, function (week) {
+                if (week.id == id) {
+                    callback(week);
+                }    
+            }, this);
+
         }
     }
 })(App);
