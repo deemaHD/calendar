@@ -8,14 +8,12 @@
 }
 
 body {
-//	background-color: #FFFFFF;
 	background-image: url('img/bg.jpg');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: right bottom;
 	margin: 20px;
 	font-size: 12px;
-//	color: #296FA5;
 }
 
 .hiden {
@@ -25,13 +23,14 @@ body {
 div#main {
     table {
         margin: 0 auto;
+        width: 50%;
         margin-bottom: 3%;
+        border-collapse:collapse;
         tr {
-            height: 2em;
+            height: 2.3em;
             td {
                 .text-center;
                 border: 1px solid @border;
-                background-color: @background;
                 a {
                     text-decoration: none;
                     font-size: 1.3em;
@@ -42,25 +41,28 @@ div#main {
     }
 }
 
-.daysList td{
-    background-color: @days_bg;
+.month tr:nth-child(2n) {
+    background-color: rgb(153, 204, 153);;
 }
 
-.monthName td{
-    .text-center;
-    background-color: @month_name_bg;
-    font-size: 1.5em;
-    color: white;
+.daysHeader th{
+    background-color: @days_bg;    
 }
 
-.daysName td{
-    background-color: @month_name_bg;    
-}
-
-.daysDate td {
-    background-color: @days_bg;
+.days {
+    background-color: @background;
+    cursor: pointer;
+    td {
+        font-size: 1.3em;
+    }
 }
 
 .monthHeader{
     .text-center;
+    td {
+        .text-center;
+        background-color: @month_name_bg;
+        font-size: 1.5em;
+        color: white;
+    }
 }
