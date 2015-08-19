@@ -36,7 +36,7 @@
         }
         
         function showWeekById (id) {
-            getModelById(id, showWeek);
+            getWeekById(id, showWeek);
         }
         
         function findFirstWeek () {
@@ -47,7 +47,7 @@
             $('#main').children().addClass('hiden');
         }
         
-        function getModelById (id, callback) {
+        function getWeekById (id, callback) {
             var weeks = collections.weeks.toJSON();
             _.each(weeks, function (week) {
                 if (week.id == id) {

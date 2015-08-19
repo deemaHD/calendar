@@ -31,6 +31,9 @@ div#main table tr td a {
   font-size: 1.3em;
   padding: 10 5 10 10;
 }
+div#main table tr .emptyCell {
+  background-color: white;
+}
 .month tr:nth-child(2n) {
   background-color: #99cc99;
 }
@@ -52,4 +55,7 @@ div#main table tr td a {
   background-color: #70adc9;
   font-size: 1.5em;
   color: white;
+}
+.preview {
+  background-color: #99cccc;
 }

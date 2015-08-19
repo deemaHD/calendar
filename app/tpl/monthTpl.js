@@ -9,7 +9,7 @@ templates.monthTpl = _.template([
     '<tr class="daysHeader"><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr>',
     '<tr class="days">',
       '<% for (var i = 0; i < getDay(date); i++) { %>',
-        '<td></td>',
+        '<td class="emptyCell"></td>',
       '<% } %>',
       '<% while (date.getMonth() == mon) { %>',
         '<td> <%= date.getDate() %> </td>',
@@ -20,7 +20,7 @@ templates.monthTpl = _.template([
       '<% } %>',
       '<% if (getDay(date) != 0) { %>',
         '<% for (var i = getDay(date); i < 7; i++) { %>',
-            '<td></td>',
+            '<td class="emptyCell"></td>',
         '<% } %>',
       '<% } %>',
       '</tr></table>'
