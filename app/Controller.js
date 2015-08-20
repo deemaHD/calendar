@@ -14,18 +14,20 @@
             $('#main').append(monthView.render(startDate).el);
             
             setUpMediator();
-            findFirstWeek(); // add class 'start' to every first week
         }
         
         function setUpMediator () {
             App.mediator.subscribe('ShowCalendar', showCalendar, {}, this);
             App.mediator.subscribe('ShowWeek', showWeek, {}, this);
             App.mediator.subscribe('ShowWeekById', showWeekById, {}, this);
+            App.mediator.subscribe('ShowSchedule', showSchedule, {}, this);
+            App.mediator.subscribe('ShowScheduleById', showScheduleById, {}, this);
         }
         
         function showCalendar () {
             $('.calendar').removeClass('hiden');
             $('.preview').remove();
+            $('.schedule').remove();
         }
         
         function showWeek (previewWeek) {
@@ -39,8 +41,15 @@
             getWeekById(id, showWeek);
         }
         
-        function findFirstWeek () {
-            monthView.findFirstWeek();
+        function showSchedule (resourceId, weekId) {
+            hideAll();
+            var weekView = new App.WeekView();
+            
+            $('#main').append(weekView.render(resourceId, weekId).el);
+        }
+        
+        function showScheduleById (weekId, resourceId) {
+            showSchedule(resourceId, weekId);
         }
         
         function hideAll () {

@@ -3,7 +3,8 @@
         routes: {
             '': 'mainView',
             'calendar': 'mainView',
-            'week/:id': 'showWeek'
+            'week/:id': 'showWeek',
+            'week/:weekId/resource/:idResource': 'showSchedule'
         },
 
         initialize: function () {
@@ -11,6 +12,7 @@
             
             This.mediator.subscribe('ShowWeek', this.navigateShowWeek, {}, this);
             This.mediator.subscribe('ShowCalendar', this.navigateShowCalendar, {}, this);
+            This.mediator.subscribe('ShowSchedule', this.navigateShowSchedule, {}, this);
         },
         
         mainView: function () {
@@ -25,8 +27,16 @@
             this.navigate('calendar');    
         },
         
+        navigateShowSchedule: function (idResource, weekId) {
+            this.navigate('week/' + weekId + '/resource/' + idResource);    
+        },
+        
         showWeek: function (id) {
             This.mediator.publish('ShowWeekById', id);
+        },
+        
+        showSchedule: function (weekId, idResource) {
+            This.mediator.publish('ShowScheduleById', weekId, idResource);
         }
     });
 })(App);

@@ -49,9 +49,7 @@
         renderPreview: function (e) {
             var startDate = $(e.target).parent().attr('class').split(' ')[1],
                 previewWeek = this.getWeek(startDate);
-                //weekPreView = new WeekPreView({model: previewWeek});
             
-            //$('#main').html(weekPreView.render(previewWeek.id).el);
             App.mediator.publish('ShowWeek', previewWeek);
         },
         
